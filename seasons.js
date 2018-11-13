@@ -22,5 +22,3 @@ let minutesTilNextSeason = Math.floor((timeTilNextSeason / (60 * 1000)) - (hours
 
 // Format the time for display
 let formattedTimeTil = `${daysTilNextSeason}D ${hoursTilNextSeason}H ${minutesTilNextSeason}M`
-
-document.title = "It's " + currentSeason + " in Horizon";
