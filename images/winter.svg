@@ -31,8 +31,8 @@
 	l10.206-1.073l20.401-2.145l21.556-2.266l41.435-4.354l3.17-0.334l14.258-1.498l2.986-0.314l21.556-2.266l14.207-1.492l2.529-14.246
 	l1.39-7.827l2.906,9.282l3.66,11.688l12.616-1.325l23.878-2.51l23.201-2.439l-6.981-21.391L550.222,138.557z"/>
 <linearGradient id="WINTER_tint_1_" gradientUnits="userSpaceOnUse" x1="-2.5342" y1="115.5273" x2="572.7247" y2="189.3517">
-	<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0.2"/>
-	<stop  offset="1" style="stop-color:#0279BF"/>
+	<stop  offset="0.1" style="stop-color:#FFFFFF;stop-opacity:0.2"/>
+	<stop  offset="0.9" style="stop-color:#0279BF"/>
 </linearGradient>
 <path id="WINTER_tint" fill="url(#WINTER_tint_1_)" d="M560.151,128.445c4.316-5.532,7.779-12.083,10.289-19.466
 	c2.458-7.232,3.703-15.422,3.703-24.345c0-8.403-1.434-15.878-4.262-22.22c-2.955-6.609-7.119-11.988-12.382-15.999
@@ -49,7 +49,14 @@
 	l41.435-4.354l3.17-0.334l14.258-1.498l2.986-0.314l21.556-2.266l14.207-1.492l2.529-14.246l1.39-7.827l2.906,9.282l3.66,11.688
 	l12.616-1.325l23.878-2.51l23.201-2.439l-6.981-21.391l-13.849-42.438C553.844,135.655,557.171,132.271,560.151,128.445z"/>
 <linearGradient id="SEASON_tint_1_" gradientUnits="userSpaceOnUse" x1="14.334" y1="252.1841" x2="528.8227" y2="318.2097">
-	<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+	<stop  offset="0.5481" style="stop-color:#FFFFFF;stop-opacity:0"/>
+	<stop  offset="0.5906" style="stop-color:#D4E8F4;stop-opacity:0.094"/>
+	<stop  offset="0.6514" style="stop-color:#9DCBE6;stop-opacity:0.2285"/>
+	<stop  offset="0.7127" style="stop-color:#6EB2DA;stop-opacity:0.3642"/>
+	<stop  offset="0.7731" style="stop-color:#479DD0;stop-opacity:0.498"/>
+	<stop  offset="0.8327" style="stop-color:#298EC9;stop-opacity:0.6297"/>
+	<stop  offset="0.8909" style="stop-color:#1382C3;stop-opacity:0.7586"/>
+	<stop  offset="0.9474" style="stop-color:#067BC0;stop-opacity:0.8836"/>
 	<stop  offset="1" style="stop-color:#0279BF"/>
 </linearGradient>
 <path id="SEASON_tint" fill="url(#SEASON_tint_1_)" d="M531.635,213.731l-507.71,53.363c-5.993,0.63-11.534,6.071-12.376,12.153

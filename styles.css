@@ -1,3 +1,61 @@
 body {
     font-family: 'PT Sans';
+    font-weight: normal;
+    background-color: black;
+}
+
+#season-splash {
+    width: 30%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 4em;
+}
+
+#countdown-container {
+    height: 4em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2em;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1em;
+}
+
+#clock {
+    height: 100%;
+    width: auto;
+    border-radius: 10%;
+    /* float: left; */
+    margin-right: 1em;
+}
+
+#countdown-labels {
+    min-width: 200px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    float:right;
+}
+
+.time-value {
+    font-size: 2.75em;
+    line-height: 1em;
+}
+
+#countdown-title, .time-label {
+    line-height: 1em;
+    font-weight: normal;
+}
+
+#countdown-title {
+    font-size: 1.5em;
+}
+
+.time-label {
+    font-family: "PT Sans Narrow";
+    font-size: 1.75em;
+    margin-left: -.1em;
+    margin-right: .1em;
 }

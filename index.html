@@ -11,9 +11,31 @@
 </head>
 
 <body>
-    it is currently <script> document.write(currentSeason) </script>.
-    <br />
-    <script> document.write(formattedTimeTil) </script>
+    <!-- it is currently <script> document.write(currentSeason) </script>. -->
+    <div id="countdown-container">
+        <img id="clock" src="images/clock.png"/>
+        <div id="countdown-labels">
+            <div id="countdown-title" class="countdown-label"><script> document.write(nextSeason + " starts in") </script></div>
+            <div id="countdown" class="countdown-label">
+                <span id="days" class="time-value"></span>
+                <span class="time-label">D</span>
+                <span id="hours" class="time-value"></span>
+                <span class="time-label">H</span>
+                <span id="minutes" class="time-value"></span>
+                <span class="time-label">M</span>
+            </div>
+        </div>
+    </div>
+
+    <img id="season-splash"/>
+
+    <script>
+        document.getElementById("days").textContent = daysTilNextSeason;
+        document.getElementById("hours").textContent = hoursTilNextSeason;
+        document.getElementById("minutes").textContent = hoursTilNextSeason;
+
+        document.getElementById("season-splash").src = `images/${currentSeason}.svg`;
+    </script>
 </body>
 
 </html>
