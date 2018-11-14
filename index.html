@@ -16,7 +16,7 @@
     <div id="countdown-container">
         <img id="clock" src="images/clock.png"/>
         <div id="countdown-labels">
-            <div id="countdown-title" class="countdown-label"><script> document.write(nextSeason + " starts in") </script></div>
+            <div id="countdown-title" class="countdown-label"></div>
             <div id="countdown" class="countdown-label">
                 <span id="days" class="time-value"></span>
                 <span class="time-label">D</span>
@@ -34,7 +34,8 @@
         document.getElementById("days").textContent = daysTilNextSeason;
         document.getElementById("hours").textContent = hoursTilNextSeason;
         document.getElementById("minutes").textContent = hoursTilNextSeason;
-        document.getElementById("season-splash").src = `images/${currentSeason}/${currentSeason}-splash.svg`;
+        document.getElementById("countdown-title").textContent = nextSeason + " starts in";
+        document.getElementById("season-splash").src = `images/${currentSeason}/${currentSeason}-splash.png`;
     </script>
 </body>
 
