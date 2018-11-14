@@ -24,20 +24,64 @@ body {
     left: -20px; */
 }
 
+#clock {
+    height: 100%;
+    width: auto;
+    border-radius: 10%;
+    margin-right: 1em;
+}
+
+#countdown-labels {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    float: right;
+    text-shadow: 0 0 10px rgba(127, 127, 127, 1);
+}
+
 /* Portrait */
 @media screen and (orientation:portrait) {
     #season-background {
         filter: blur(20px);
-        transform: scale(1.2);
+        /* transform: scale(1.2); */
     }
 
     #season-splash {
         width: 80%;
-        position: relative;
+        position: absolute;
         top: 20%;
-        left: 15%;
+        left: 10%;
     }
 
+    #countdown-container {
+        height: 100px;
+        position: absolute;
+        bottom: 15%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        padding: 15px;
+        background-color: rgba(127, 127, 127, 0.2);
+        border-radius: 15px;
+    }
+
+    .time-value {
+        font-size: 70px;
+        line-height: 1em;
+    }
+
+    #countdown-title, .time-label {
+        line-height: 35px;
+        font-weight: normal;
+    }
+
+    #countdown-title {
+        font-size: 40px;
+    }
+
+    .time-label {
+        font-family: "PT Sans Narrow";
+        font-size: 40px;
+    }
 }
 
 /* Landscape */
@@ -49,54 +93,36 @@ body {
         right: 0;
         margin: 4em;
     }
-}
 
+    #countdown-container {
+        height: 4em;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 2em;
+        padding: 1em;
+        background-color: rgba(127, 127, 127, 0.2);
+        border-radius: 1em;
+    }
 
-#countdown-container {
-    height: 4em;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 2em;
-    padding: 1em;
-    background-color: rgba(127, 127, 127, 0.2);
-    border-radius: 1em;
-}
+    .time-value {
+        font-size: 2.75em;
+        line-height: 1em;
+    }
 
-#clock {
-    height: 100%;
-    width: auto;
-    border-radius: 10%;
-    /* float: left; */
-    margin-right: 1em;
-}
+    #countdown-title, .time-label {
+        line-height: 1em;
+        font-weight: normal;
+    }
 
-#countdown-labels {
-    min-width: 200px;
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    float: right;
-    text-shadow: 0 0 5px rgba(127, 127, 127, 1);
-}
+    #countdown-title {
+        font-size: 1.5em;
+    }
 
-.time-value {
-    font-size: 2.75em;
-    line-height: 1em;
-}
-
-#countdown-title, .time-label {
-    line-height: 1em;
-    font-weight: normal;
-}
-
-#countdown-title {
-    font-size: 1.5em;
-}
-
-.time-label {
-    font-family: "PT Sans Narrow";
-    font-size: 2em;
-    margin-left: -.1em;
-    margin-right: .1em;
+    .time-label {
+        font-family: "PT Sans Narrow";
+        font-size: 2em;
+        margin-left: -.1em;
+        margin-right: .1em;
+    }
 }
