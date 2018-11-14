@@ -25,7 +25,7 @@
     <link rel="icon" type="image/png" href="icons/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="icons/favicon-128.png" sizes="128x128" />
     <meta name="application-name" content="Horizon Season"/>
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileColor" content="#00b592" />
     <meta name="msapplication-TileImage" content="icons/mstile-144x144.png" />
     <meta name="msapplication-square70x70logo" content="icons/mstile-70x70.png" />
     <meta name="msapplication-square150x150logo" content="icons/mstile-150x150.png" />
@@ -52,11 +52,12 @@
     <img id="season-splash"/>
 
     <script>
+        document.getElementById("season-splash").src = `images/${currentSeason}/${currentSeason}-splash.png`;
+        document.body.style.backgroundImage = `url(images/${currentSeason}/${currentSeason}-background.png)`;
         document.getElementById("days").textContent = daysTilNextSeason;
         document.getElementById("hours").textContent = hoursTilNextSeason;
         document.getElementById("minutes").textContent = hoursTilNextSeason;
         document.getElementById("countdown-title").textContent = nextSeason + " starts in";
-        document.getElementById("season-splash").src = `images/${currentSeason}/${currentSeason}-splash.png`;
     </script>
 </body>
 

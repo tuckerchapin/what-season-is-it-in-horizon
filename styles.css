@@ -1,7 +1,6 @@
 body {
     font-family: 'PT Sans';
     font-weight: normal;
-    background-color: black;
 }
 
 #season-splash {
@@ -55,7 +54,7 @@ body {
 
 .time-label {
     font-family: "PT Sans Narrow";
-    font-size: 1.75em;
+    font-size: 2em;
     margin-left: -.1em;
     margin-right: .1em;
 }
