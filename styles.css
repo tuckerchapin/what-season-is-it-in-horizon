@@ -19,9 +19,6 @@ body {
     height: 100%;
     object-fit: cover;
     position: absolute;
-    /* margin: -20px; */
-    /* top: -20px;
-    left: -20px; */
 }
 
 #clock {
@@ -43,6 +40,11 @@ body {
 @media screen and (orientation:portrait) {
     #season-background {
         filter: blur(20px);
+        width: calc(100% + 40px);
+        height: calc(100% + 80px);
+        /* margin: -20px; */
+        top: -20px;
+        left: -20px;
         /* transform: scale(1.2); */
     }
 
@@ -80,7 +82,8 @@ body {
 
     .time-label {
         font-family: "PT Sans Narrow";
-        font-size: 40px;
+        font-size: 50px;
+        margin-right: 10px;
     }
 }
 
