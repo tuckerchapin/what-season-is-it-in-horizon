@@ -40,7 +40,7 @@ body {
 /* Portrait */
 @media screen and (orientation:portrait) {
     #season-background {
-        filter: blur(20px);
+        filter: blur(10px);
     }
 
     #season-splash {
