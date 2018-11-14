@@ -31,9 +31,21 @@
     <meta name="msapplication-square150x150logo" content="icons/mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="icons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="icons/mstile-310x310.png" />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52798147-7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-52798147-7');
+    </script>
+
 </head>
 
 <body>
+    <img id="season-background" />
+
     <div id="countdown-container">
         <img id="clock" src="images/clock.png"/>
         <div id="countdown-labels">
@@ -53,7 +65,7 @@
 
     <script>
         document.getElementById("season-splash").src = `images/${currentSeason}/${currentSeason}-splash.png`;
-        document.body.style.backgroundImage = `url(images/${currentSeason}/${currentSeason}-background.jpg)`;
+        document.getElementById("season-background").src = `images/${currentSeason}/${currentSeason}-background.jpg`;
         document.getElementById("days").textContent = daysTilNextSeason;
         document.getElementById("hours").textContent = hoursTilNextSeason;
         document.getElementById("minutes").textContent = hoursTilNextSeason;
