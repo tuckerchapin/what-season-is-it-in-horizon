@@ -12,6 +12,7 @@ html, body {
 body {
     font-family: 'PT Sans';
     font-weight: normal;
+    position: fixed;
 }
 
 #season-background {
