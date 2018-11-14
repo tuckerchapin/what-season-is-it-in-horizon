@@ -28,15 +28,14 @@ body {
 @media screen and (orientation:portrait) {
     #season-background {
         filter: blur(20px);
-        transform: scale(1.5);
+        transform: scale(1.2);
     }
 
     #season-splash {
         width: 80%;
-        position: absolute;
-        top: 30%;
-        right: 0;
-        margin: 8%;
+        position: relative;
+        top: 20%;
+        left: 15%;
     }
 
 }
