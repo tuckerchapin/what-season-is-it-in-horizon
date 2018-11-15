@@ -1,6 +1,8 @@
 const seasons = ["winter", "spring", "summer", "autumn"];
-const winterStarts = new Date(Date.UTC(2018, 10, 8, 7, 23, 00));
+const winterStarts = new Date(Date.UTC(2018, 10, 8, 14, 30, 00));
 let lastCheckedSeason;
+let minuteInterval = 0;
+let secondInterval = 0;
 
 // List of the uploaded user's images
 const userBackgrounds = {
