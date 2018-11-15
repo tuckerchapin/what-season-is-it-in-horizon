@@ -23,12 +23,13 @@ body {
     position: absolute;
 }
 
-#clock {
-    height: 100%;
-    width: auto;
-    border-radius: 10%;
-    margin-right: 1em;
-    float: left;
+#countdown-container {
+    background-color: #00b592;
+    background-image: url("../images/clock/clock-fullshadow.png");
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 #countdown-labels {
@@ -37,12 +38,4 @@ body {
     text-transform: uppercase;
     float: right;
     text-shadow: 0 0 10px #008168;
-}
-
-#countdown-container {
-    background-color: #00b592;
-    background-image: url("../images/clock/clock-fullshadow.png");
-    background-position: left;
-    background-size: contain;
-    background-repeat: no-repeat;
 }

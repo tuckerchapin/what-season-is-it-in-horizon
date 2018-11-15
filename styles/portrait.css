@@ -1,7 +1,7 @@
 @media screen and (orientation:portrait) {
     #season-background {
         filter: blur(10px);
-        transform: scale(1.2);
+        /* transform: scale(1.2); */
     }
 
     #season-splash {
@@ -15,12 +15,11 @@
         height: 100px;
         position: absolute;
         bottom: 15%;
+        transform-origin: center center;
         transform: translate(50%, 0);
         padding: 15px;
         padding-left: 130px; /* Make room for the bg image to show */
         border-radius: 15px;
-        overflow: auto;
-        clear: both;
     }
 
     .time-value {
