@@ -16,7 +16,7 @@
         bottom: 15%;
         transform: translate(50%, 0);
         padding: 15px;
-        background-color: rgba(127, 127, 127, 0.3);
+        padding-left: 130px;
         border-radius: 15px;
         overflow: auto;
         clear: both;

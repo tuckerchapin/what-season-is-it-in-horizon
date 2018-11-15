@@ -36,5 +36,13 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     float: right;
-    text-shadow: 0 0 10px rgba(127, 127, 127, 1);
+    text-shadow: 0 0 10px #008168;
+}
+
+#countdown-container {
+    background-color: #00b592;
+    background-image: url("../images/clock/clock-fullshadow.png");
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
