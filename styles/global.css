@@ -28,6 +28,7 @@ body {
     width: auto;
     border-radius: 10%;
     margin-right: 1em;
+    float: left;
 }
 
 #countdown-labels {

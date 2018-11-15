@@ -14,11 +14,12 @@
         height: 100px;
         position: absolute;
         bottom: 15%;
-        left: 50%;
-        transform: translate(-50%, 0);
+        transform: translate(50%, 0);
         padding: 15px;
         background-color: rgba(127, 127, 127, 0.3);
         border-radius: 15px;
+        overflow: auto;
+        clear: both;
     }
 
     .time-value {
@@ -26,18 +27,17 @@
         line-height: 1em;
     }
 
-    #countdown-title, .time-label {
-        line-height: 35px;
-        font-weight: normal;
-    }
-
     #countdown-title {
         font-size: 40px;
+        line-height: 35px;
+        font-weight: normal;
     }
 
     .time-label {
         font-family: "PT Sans Narrow";
         font-size: 50px;
         margin-right: 10px;
+        line-height: 35px;
+        font-weight: normal;
     }
 }
