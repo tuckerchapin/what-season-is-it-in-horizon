@@ -18,12 +18,14 @@ function calculateTimes() {
     let days = Math.floor(timeTilNextSeason / (24 * 60 * 60 * 1000));
     let hours = Math.floor((timeTilNextSeason / (60 * 60 * 1000)) - (days * 24));
     let minutes = Math.floor((timeTilNextSeason / (60 * 1000)) - (hours * 60) - (days * 24 * 60));
+    let seconds = Math.floor((timeTilNextSeason / 1000) - (minutes * 60) - (hours * 60 * 60) - (days * 24 * 60 * 60));
 
     return {
         currentSeason,
         nextSeason,
         days,
         hours,
-        minutes
+        minutes,
+        seconds
     }
 }

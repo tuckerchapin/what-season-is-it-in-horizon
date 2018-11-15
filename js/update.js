@@ -8,11 +8,11 @@ function update() {
     }
 
     // Always set the countdown timer
-    setCountdown(times.days, times.hours, times.minutes);
+    setCountdown(times.days, times.hours, times.minutes, times.seconds);
 }
 
 // Sets the page initially.
 update();
 
 // Update the time every minute
-setInterval(() => update(), 3000)
+setInterval(() => update(), 1000);
