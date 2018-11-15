@@ -4,7 +4,7 @@ function setBackgroundImage(currentSeason) {
     document.getElementById("season-background").src = `images/${currentSeason}/backgrounds/${selectedBackground}.jpg`;
 
     // Art credit
-    console.log("Background image courtesy of /u/" + selectedBackground.slice(0, -2));
+    console.log(`Background image courtesy of /u/${selectedBackground.slice(0, -2)}`);
 }
 
 function setSeasonal(currentSeason, nextSeason) {
@@ -21,54 +21,48 @@ function setCountdown(days, hours, minutes, seconds) {
     document.getElementById("hours").textContent = hours;
     document.getElementById("minutes").textContent = minutes;
                                                     // Pad the seconds to two digits
-                                                    console.log((seconds > 9) ? seconds : ("0" + seconds));
     document.getElementById("seconds").textContent = (seconds > 9) ? seconds : ("0" + seconds);
 
-    if (days > 0) {
-        // Reset the display style if previously hidden.
+    // Hide the days if there are zero full days left
+    if (days === 0) {
+        document.getElementById("days").style.display = "none";
+        document.getElementById("days-label").style.display = "none";
+    } else {
         document.getElementById("days").style.display = "";
         document.getElementById("days-label").style.display = "";
+    }
+
+    // Hide the hours if there are zero full hours AND days left
+    if (hours === 0 && days === 0) {
+        document.getElementById("hours").style.display = "none";
+        document.getElementById("hours-label").style.display = "none";
+    } else {
         document.getElementById("hours").style.display = "";
         document.getElementById("hours-label").style.display = "";
+    }
 
-        // Hide the seconds
-        document.getElementById("seconds").style.display = "none";
-        document.getElementById("seconds-label").style.display = "none";
-        document.getElementById("seconds-label").textContent = "S";
-    } else if (hours > 0) {
-        // If there are no full days, but a non-zero number of hours, display 2 values.
-        // Hide the days
-        document.getElementById("days").style.display = "none";
-        document.getElementById("days-label").style.display = "none";
-
-        // Hide the seconds
-        document.getElementById("seconds").style.display = "none";
-        document.getElementById("seconds-label").style.display = "none";
-        document.getElementById("seconds-label").textContent = "S";
-    } else if (minutes > 0){
-        // Zero days, zero hours: display only minutes and seconds.
-        // Hide the days and hours
-        document.getElementById("days").style.display = "none";
-        document.getElementById("days-label").style.display = "none";
-        document.getElementById("hours").style.display = "none";
-        document.getElementById("hours-label").style.display = "none";
-
-        // Show the seconds
-        document.getElementById("seconds").style.display = "";
-        document.getElementById("seconds-label").style.display = "";
-    } else {
-        // Zero days, zero minutes, zero hours: display only seconds with the full word.
-        // Hide the days and hours and minutes
-        document.getElementById("days").style.display = "none";
-        document.getElementById("days-label").style.display = "none";
-        document.getElementById("hours").style.display = "none";
-        document.getElementById("hours-label").style.display = "none";
+    // Hide the minutes if there are zero full minutes, hours, AND days left
+    if (minutes === 0 && hours === 0 && days === 0) {
         document.getElementById("minutes").style.display = "none";
         document.getElementById("minutes-label").style.display = "none";
+    } else {
+        document.getElementById("minutes").style.display = "";
+        document.getElementById("minutes-label").style.display = "";
+    }
 
-        // Show the seconds
+    if (days === 0 && hours === 0) {
+        // If there are no full hours or days left, show the seconds
         document.getElementById("seconds").style.display = "";
         document.getElementById("seconds-label").style.display = "";
-        document.getElementById("seconds-label").textContent = "SECONDS";
+
+        // If there are also no minutes left, show the full "seconds" label
+        if (minutes === 0) {
+            document.getElementById("seconds-label").textContent = "SECONDS";
+        } else {
+            document.getElementById("seconds-label").textContent = "S";
+        }
+    } else {
+        document.getElementById("seconds").style.display = "none";
+        document.getElementById("seconds-label").style.display = "none";
     }
 }

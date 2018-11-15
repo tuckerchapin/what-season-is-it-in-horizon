@@ -1,5 +1,5 @@
 const seasons = ["winter", "spring", "summer", "autumn"];
-const winterStarts = new Date(Date.UTC(2018, 10, 8, 14, 30, 00));
+const winterStarts = new Date(Date.UTC(2018, 10, 8, 7, 23, 00));
 let lastCheckedSeason;
 
 // List of the uploaded user's images
