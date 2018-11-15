@@ -7,7 +7,6 @@ const userBackgrounds = {
         "kml-1",
         "parkel421",
         "parkel422",
-        "parkel423",
         "CCXGT1",
         "naixu1",
     ],
