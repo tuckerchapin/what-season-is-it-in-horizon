@@ -1,8 +1,7 @@
-function update(check = true) {
+function update() {
     let times = calculateTimes();
-
     // Check if the season has changed or not
-    if (!check || times.currentSeason != currentSeason) {
+    if (times.currentSeason !== lastCurrentSeason) {
         setSeasonal(times.currentSeason, times.nextSeason);
         setBackgroundImage(times.currentSeason);
     }
@@ -12,7 +11,7 @@ function update(check = true) {
 }
 
 // Sets the page initially.
-update(false);
+update();
 
 // Update the time every minute
 setInterval(() => update(), 60000)

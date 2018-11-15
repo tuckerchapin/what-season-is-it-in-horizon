@@ -5,16 +5,12 @@ function setSeasonal(currentSeason, nextSeason) {
 }
 
 function setBackgroundImage(currentSeason) {
-        if (userBackgrounds[currentSeason].length > 0) {
-        // Randomly select a background appropriate for the season
-        let selectedBackground = userBackgrounds[currentSeason][Math.floor(Math.random() * userBackgrounds[currentSeason].length)];
-        document.getElementById("season-background").src = `images/${currentSeason}/backgrounds/${selectedBackground}.jpg`;
+    // Randomly select a background appropriate for the season
+    let selectedBackground = userBackgrounds[currentSeason][Math.floor(Math.random() * userBackgrounds[currentSeason].length)];
+    document.getElementById("season-background").src = `images/${currentSeason}/backgrounds/${selectedBackground}.jpg`;
 
-        // Art credit
-        console.log("Background image courtesy of /u/" + selectedBackground.slice(0, -1));
-    } else {
-        document.getElementById("season-background").src = `images/${currentSeason}/${currentSeason}-background-default.jpg`;
-    }
+    // Art credit
+    console.log("Background image courtesy of /u/" + selectedBackground.slice(0, -2));
 }
 
 function setCountdown(days, hours, minutes) {
