@@ -14,7 +14,7 @@
         right: 0;
         margin: 2em;
         padding: 1em;
-        padding-left: 6em;
+        padding-left: 6em;  /* Make room for the bg image to show */
         border-radius: 1em;
     }
 

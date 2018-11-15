@@ -16,7 +16,7 @@
         bottom: 15%;
         transform: translate(50%, 0);
         padding: 15px;
-        padding-left: 130px;
+        padding-left: 130px; /* Make room for the bg image to show */
         border-radius: 15px;
         overflow: auto;
         clear: both;
