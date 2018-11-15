@@ -1,6 +1,7 @@
 @media screen and (orientation:portrait) {
     #season-background {
         filter: blur(10px);
+        transform: scale(1.2);
     }
 
     #season-splash {
