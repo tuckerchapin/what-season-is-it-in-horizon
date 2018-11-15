@@ -1,7 +1,8 @@
 function update() {
     let times = calculateTimes();
     // Check if the season has changed or not
-    if (times.currentSeason !== lastCurrentSeason) {
+    if (times.currentSeason !== lastCheckedSeason) {
+        lastCheckedSeason = times.currentSeason;
         setSeasonal(times.currentSeason, times.nextSeason);
         setBackgroundImage(times.currentSeason);
     }
