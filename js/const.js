@@ -19,3 +19,5 @@ const userBackgrounds = {
         "SkylineSonata1",
     ],
 };
+
+let currentSeason;
