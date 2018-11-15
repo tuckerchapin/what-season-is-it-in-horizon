@@ -10,6 +10,8 @@ const userBackgrounds = {
         "DANGERD33-1",
         "InternetExplorer8-1", // 3837x2159
         "maikee_bery-1",
+        "MrsAverageMan-1",
+        "MrsAverageMan-2",
         "SkylineSonata-1",
         "Vadeel-1",
     ],
@@ -29,6 +31,7 @@ const userBackgrounds = {
         "ARCLab-1", // 4K
         "CCXGT-1",
         "CraazyGamerz-1",
+        "DakarGelb-1",
         "flakgunna-1", // 2715x1121
         "kml--1",
         "LooniLuna-1",
@@ -38,6 +41,8 @@ const userBackgrounds = {
         "parkel42-2",
         // "parkel42-3", // Not a fan
         "sjoel92-1",
+        "StickManTwit-1",
         "ThatsJustLogic-1",
+        "TigerusTheReal-1",
     ],
 };
