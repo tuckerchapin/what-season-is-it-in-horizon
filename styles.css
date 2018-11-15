@@ -57,7 +57,7 @@ body {
         left: 50%;
         transform: translate(-50%, 0);
         padding: 15px;
-        background-color: rgba(127, 127, 127, 0.2);
+        background-color: rgba(127, 127, 127, 0.3);
         border-radius: 15px;
     }
 
@@ -92,6 +92,16 @@ body {
         margin: 4em;
     }
 
+    #blurred-background {
+        /* height: 4em;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 2em;
+        border-radius: 1em; */
+        filter: blur(10px);
+    }
+
     #countdown-container {
         height: 4em;
         position: absolute;
@@ -99,7 +109,7 @@ body {
         right: 0;
         margin: 2em;
         padding: 1em;
-        background-color: rgba(127, 127, 127, 0.2);
+        background-color: rgba(127, 127, 127, 0.3);
         border-radius: 1em;
     }
 
