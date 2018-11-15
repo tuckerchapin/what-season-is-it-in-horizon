@@ -1,9 +1,3 @@
-function setSeasonal(currentSeason, nextSeason) {
-    document.title = "It's " + currentSeason + " in Horizon";
-    document.getElementById("season-splash").src = `images/${currentSeason}/${currentSeason}-splash.svg`;
-    document.getElementById("countdown-title").textContent = nextSeason + " starts in";
-}
-
 function setBackgroundImage(currentSeason) {
     // Randomly select a background appropriate for the season
     let selectedBackground = userBackgrounds[currentSeason][Math.floor(Math.random() * userBackgrounds[currentSeason].length)];
@@ -11,6 +5,14 @@ function setBackgroundImage(currentSeason) {
 
     // Art credit
     console.log("Background image courtesy of /u/" + selectedBackground.slice(0, -2));
+}
+
+function setSeasonal(currentSeason, nextSeason) {
+    document.title = "It's " + currentSeason + " in Horizon";
+    document.getElementById("season-splash").src = `images/${currentSeason}/${currentSeason}-splash.svg`;
+    document.getElementById("countdown-title").textContent = nextSeason + " starts in";
+
+    setBackgroundImage(currentSeason);
 }
 
 function setCountdown(days, hours, minutes) {

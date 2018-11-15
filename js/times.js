@@ -6,11 +6,11 @@ function calculateTimes() {
         (now - winterStarts) / (7 * 24 * 60 * 60 * 1000)
     ));
 
-    currentSeason = seasons[numberOfSeasonsPassed % 4];
+    let currentSeason = seasons[numberOfSeasonsPassed % 4];
 
     // Calculate the next season.
     let nextSeason = seasons[(numberOfSeasonsPassed + 1) % 4];
-    let nextSeasonStart = winterStarts;
+    let nextSeasonStart = new Date(winterStarts);
     nextSeasonStart.setDate(nextSeasonStart.getDate() + ((numberOfSeasonsPassed + 1) * 7));
 
     // How much time until the next season.

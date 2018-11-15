@@ -1,10 +1,10 @@
 function update() {
     let times = calculateTimes();
+
     // Check if the season has changed or not
     if (times.currentSeason !== lastCheckedSeason) {
-        lastCheckedSeason = times.currentSeason;
         setSeasonal(times.currentSeason, times.nextSeason);
-        setBackgroundImage(times.currentSeason);
+        lastCheckedSeason = times.currentSeason;
     }
 
     // Always set the countdown timer
@@ -15,4 +15,4 @@ function update() {
 update();
 
 // Update the time every minute
-setInterval(() => update(), 60000)
+setInterval(() => update(), 3000)
