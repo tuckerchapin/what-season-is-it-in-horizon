@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    user-select: none;
 }
 
 html, body {
@@ -90,16 +91,6 @@ body {
         bottom: 0;
         right: 0;
         margin: 4em;
-    }
-
-    #blurred-background {
-        /* height: 4em;
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin: 2em;
-        border-radius: 1em; */
-        filter: blur(10px);
     }
 
     #countdown-container {
