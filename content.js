@@ -1,22 +1,3 @@
-// List of the uploaded user's images
-const userBackgrounds = {
-    "winter": [
-        "kml-1",
-        "parkel421",
-        "parkel422",
-        "parkel423",
-        "CCXGT1",
-        "naixu1",
-    ],
-    "spring": [
-    ],
-    "summer": [
-    ],
-    "autumn": [
-        "SkylineSonata1",
-    ],
-};
-
 document.getElementById("season-splash").src = `images/${currentSeason}/${currentSeason}-splash.svg`;
 
 // Background image
