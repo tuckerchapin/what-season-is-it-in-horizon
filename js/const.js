@@ -12,7 +12,9 @@ const userBackgrounds = {
         "maikee_bery-1",
         "MrsAverageMan-1",
         "MrsAverageMan-2",
+        "OriginalForzaCoverArt-1",
         "SkylineSonata-1",
+        "ThroughJaysLens-1",
         "Vadeel-1",
     ],
     "spring": [
@@ -20,12 +22,20 @@ const userBackgrounds = {
         "And_Justice-1",
         "AzudemK-1",
         "Enzo03-1",
+        "flakgunna-1",
+        "flakgunna-2",
+        "OriginalForzaCoverArt-1",
         "Positivevibes845-1",
         "Semyonov-1", // 1440p
         "slamdunk_12-1",
         // "ur4ddiction-1", // Not 1080p; 1022x598
+        "xXMetalFlakeXx-1",
     ],
     "summer": [
+        "MainlyGod-1",
+        "OfficialForzaCoverArt-1",
+        "Soovin-1",
+        "WillPill_-1",
     ],
     "winter": [
         "ARCLab-1", // 4K
@@ -37,6 +47,7 @@ const userBackgrounds = {
         "LooniLuna-1",
         "maikee_bery-1",
         "naixu-1",
+        "OriginalForzaCoverArt-1",
         "parkel42-1",
         "parkel42-2",
         // "parkel42-3", // Not a fan
