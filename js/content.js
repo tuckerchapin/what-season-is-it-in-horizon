@@ -1,11 +1,10 @@
 function setBackgroundImage(currentSeason) {
     // Randomly select a background appropriate for the season
     let selectedBackground = userBackgrounds[currentSeason][Math.floor(Math.random() * userBackgrounds[currentSeason].length)];
-    let seasonBackground = document.getElementById("season-background");
-    seasonBackground.src = `images/${currentSeason}/backgrounds/${selectedBackground}.jpg`;
+    document.body.style.backgroundImage = `url(images/${currentSeason}/backgrounds/${selectedBackground}.jpg)`;
 
     // Art credit
-    seasonBackground.alt = `Image courtesy of /u/${selectedBackground.slice(0, -2)}`;
+    document.body.alt = `Image courtesy of /u/${selectedBackground.slice(0, -2)}`;
     console.log(`Background image courtesy of /u/${selectedBackground.slice(0, -2)}`);
 }
 

@@ -4,7 +4,7 @@
     user-select: none;
 }
 
-html, body {
+html {
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -13,14 +13,12 @@ html, body {
 body {
     font-family: 'PT Sans';
     font-weight: normal;
-    position: fixed;
-}
 
-#season-background {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
+    background: no-repeat center center fixed;
+    background-size: cover;
+
+    display: grid;
+    grid-template-rows: min-content;
 }
 
 #countdown-container {
@@ -30,12 +28,91 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     overflow: hidden;
+
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #008168;
 }
 
-#countdown-labels {
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    float: right;
-    text-shadow: 0 0 10px #008168;
+@media screen and (orientation:landscape) {
+    body {
+        padding: 30px;
+        width: calc(100% - 2 * 30px);
+        height: calc(100% - 2 * 30px);
+        grid-template-columns: min-content;
+        justify-content: right;
+    }
+
+    #season-splash {
+        align-self: flex-end;
+        width: 400px;
+    }
+
+    #countdown-container {
+        padding: 20px;
+        padding-left: calc(70px + 20px);
+        border-radius: 20px;
+        justify-self: right;
+        font-size: 20px;
+        line-height: 15px;
+    }
+
+    #countdown-title {
+        margin-bottom: 10px;
+    }
+
+    .time-value {
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 25px;
+    }
+
+    .time-label {
+        font-family: "PT Sans Narrow";
+        margin-left: -2px;
+        margin-right: 5px;
+    }
+}
+
+@media screen and (orientation:portrait) {
+    body {
+        padding: 0 10%;
+        width: calc(100% - 2 * 10%);
+        height: 100%;
+        grid-template-columns: 1fr;
+        align-content: center;
+        justify-items: center;
+        row-gap: 100px;
+        backdrop-filter: blur(10px);
+    }
+
+    #season-splash {
+        grid-row-start: 1;
+        width: 100%;
+    }
+
+    #countdown-container {
+        justify-self: center;
+        border-radius: 20px;
+        padding: 40px;
+        padding-left: calc(170px + 40px);
+        font-size: 60px;
+        line-height: 50px;
+    }
+
+    #countdown-title {
+        margin-bottom: 10px;
+    }
+
+    .time-value {
+        font-size: 80px;
+        font-weight: bold;
+        line-height: 70px;
+    }
+
+    .time-label {
+        font-family: "PT Sans Narrow";
+        margin-left: -10px;
+        margin-right: 10px;
+    }
 }
