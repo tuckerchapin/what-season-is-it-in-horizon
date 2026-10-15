@@ -51,7 +51,7 @@ PT Sans (Regular and Bold) and PT Sans Narrow (Regular). The other five weights 
   - Images below 1080p: `-MattyMcFly-1` and `ur4ddiction-1`.
   - Not liked: `parkel42-3`.
 - **Live season change:** when the season rolls over while the page is open, the splash, title and background all swap.
-- **Credits:** the filename encodes the credit (`<reddit username>-<n>.jpg`, shown as `/u/<username>`). In-game watermarks were removed from the submissions by hand.
+- **Credits:** the filename encodes the credit (`<reddit username>-<n>.jpg`, shown as `/u/<username>`). In-game watermarks were removed from the submissions by hand. **2026-10-15:** the on-page credit is hidden for now. Tucker wants to bring it back with a later visual redesign. The credits are still kept in `src/backgrounds.ts`.
 
 ## Fragile or broken parts
 

@@ -85,9 +85,6 @@ async function buildPhotos(): Promise<Record<Season, Photo[]>> {
         widths,
         ratio: Math.round((width / height) * 1000) / 1000,
         hash: Buffer.from(rgbaToThumbHash(info.width, info.height, data)).toString("base64"),
-        ...("reddit" in bg.credit
-          ? { credit: `u/${bg.credit.reddit}`, href: `https://www.reddit.com/user/${bg.credit.reddit}/` }
-          : { credit: bg.credit.label }),
       });
 
       for (const w of widths) {
@@ -229,13 +226,15 @@ async function buildPage(photos: Record<Season, Photo[]>, fonts: Record<string, 
   );
   const css = (await transform(rawCss, { loader: "css", minify: true })).code.trim();
   const noscriptCss = (
-    await transform(".needs-js,#credit,.backdrop picture{display:none}.backdrop img{opacity:1}.splash{line-height:1.2;text-shadow:0 1px 4px #000}", {
+    await transform(".needs-js,.backdrop picture{display:none}.backdrop img{opacity:1}.splash{line-height:1.2;text-shadow:0 1px 4px #000}", {
       loader: "css",
       minify: true,
     })
   ).code.trim();
 
-  const fallback = photos.winter.find((p) => !p.href) ?? photos.winter[0]!;
+  // No-JS fallback: the official winter cover art.
+  const shown = backgrounds.winter.filter((b) => !b.exclude);
+  const fallback = photos.winter[Math.max(0, shown.findIndex((b) => "label" in b.credit))]!;
   const clock = optimize(await readFile(join(ASSETS, "clock/timer.svg"), "utf8"), {
     plugins: [
       "preset-default",

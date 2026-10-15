@@ -9,8 +9,6 @@ export interface Photo {
   ratio: number;
   /** Base64 ThumbHash, decoded into the placeholder shown before the photo loads. */
   hash: string;
-  credit: string;
-  href?: string;
 }
 
 declare const PHOTOS: Record<Season, Photo[]>;
@@ -87,17 +85,6 @@ function showPhoto() {
   img.src = `${photo.src}-${photo.widths.at(-1)}.jpg`;
   // Cached images may already be decoded: show them without a fade.
   if (img.complete && img.naturalWidth) img.dataset.loaded = "";
-
-  const credit = $("credit");
-  credit.replaceChildren(photo.href ? "Photo by " : "");
-  if (photo.href) {
-    const a = document.createElement("a");
-    a.href = photo.href;
-    a.textContent = photo.credit;
-    credit.append(a);
-  } else {
-    credit.append(photo.credit);
-  }
 }
 
 function preload(p: Photo) {

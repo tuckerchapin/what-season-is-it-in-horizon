@@ -41,8 +41,8 @@ body {
   white-space: nowrap;
 }
 
-/* With JS (data-season is set in <head>), never paint the timer or credit half-filled. */
-:root[data-season]:not([data-ready]) :is(.timer, #credit) {
+/* With JS (data-season is set in <head>), never paint the timer half-filled. */
+:root[data-season]:not([data-ready]) .timer {
   visibility: hidden;
 }
 
@@ -146,27 +146,6 @@ main {
   margin-left: 0.25em;
 }
 
-footer {
-  position: absolute;
-  bottom: max(var(--gutter), env(safe-area-inset-bottom));
-  left: max(var(--gutter), env(safe-area-inset-left));
-  max-width: 40vw;
-}
-#credit {
-  margin: 0;
-  font-size: clamp(0.8125rem, 1.1vmin, 1.125rem);
-  text-shadow: 0 1px 3px rgb(0 0 0 / 0.9);
-  opacity: 0.85;
-}
-#credit a {
-  color: inherit;
-  text-underline-offset: 0.15em;
-}
-#credit a:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
-  border-radius: 2px;
-}
 
 /*
  * Portrait and square: timer pinned to the bottom, splash centred on screen, both sharing one width.
@@ -204,11 +183,6 @@ footer {
     width: var(--timer-width);
     height: var(--timer-height);
     font-size: calc(var(--timer-width) / var(--timer-em));
-  }
-  footer {
-    inset: max(var(--gutter), env(safe-area-inset-top)) 0 auto;
-    max-width: none;
-    text-align: center;
   }
 }
 

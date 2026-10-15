@@ -3,7 +3,7 @@ import type { Season } from "./season.ts";
 export interface Background {
   /** Filename in assets/backgrounds/<season>/. */
   file: string;
-  /** A reddit username (credited as u/<name>) or a plain label. */
+  /** A reddit username (credited as u/<name>) or a plain label. Not shown on the page for now. */
   credit: { reddit: string } | { label: string };
   /** Kept in the repo but never shown; the reason is recorded here. */
   exclude?: string;
