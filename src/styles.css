@@ -1,0 +1,217 @@
+@font-face {
+  font-family: "PT Sans";
+  font-weight: 400;
+  font-display: block;
+  src: url("{{FONT:PT-Sans-Regular}}") format("woff2");
+}
+@font-face {
+  font-family: "PT Sans";
+  font-weight: 700;
+  font-display: block;
+  src: url("{{FONT:PT-Sans-Bold}}") format("woff2");
+}
+@font-face {
+  font-family: "PT Sans Narrow";
+  font-weight: 400;
+  font-display: block;
+  src: url("{{FONT:PT-Sans-Narrow-Regular}}") format("woff2");
+}
+
+:root {
+  --teal: #00b592;
+  --teal-glow: #008168;
+  --gutter: clamp(16px, 3vmin, 40px);
+  --timer-size: clamp(15px, min(1.15vw, 2.1vh), 28px);
+  --splash-height: clamp(100px, min(13vw, 26vh), 340px);
+  background: #101418;
+  color: #fff;
+  font: 400 15px/1.4 system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* With JS (data-season is set in <head>), never paint the timer or credit half-filled. */
+:root[data-season]:not([data-ready]) :is(.timer, #credit) {
+  visibility: hidden;
+}
+
+/* Photo: a ThumbHash placeholder on the first frame, then the real image fades in over it. */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--placeholder) center / cover, #101418;
+}
+.backdrop img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+.backdrop img[data-loaded] {
+  opacity: 1;
+}
+
+main {
+  box-sizing: border-box;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: max(var(--gutter), env(safe-area-inset-top)) max(var(--gutter), env(safe-area-inset-right))
+    max(var(--gutter), env(safe-area-inset-bottom)) max(var(--gutter), env(safe-area-inset-left));
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  justify-items: end;
+}
+
+/* Landscape: timer top-right, splash bottom-right, so the car stays clear. */
+.timer {
+  grid-row: 1;
+}
+.splash {
+  grid-row: 3;
+  margin: 0;
+  line-height: 0;
+}
+.splash svg {
+  display: none;
+  height: var(--splash-height);
+  width: auto;
+  max-width: 100%;
+  filter: drop-shadow(0 0.2rem 0.6rem rgb(0 0 0 / 0.25));
+}
+[data-season="winter"] .splash .winter,
+[data-season="spring"] .splash .spring,
+[data-season="summer"] .splash .summer,
+[data-season="autumn"] .splash .autumn {
+  display: block;
+}
+
+/* Recreates the in-game season timer: teal pill, clock with a long flat shadow. */
+.timer {
+  --height: 4.4em;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  min-height: var(--height);
+  padding: 0.75em 1.1em 0.75em calc(var(--height) * 0.92);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2em;
+  border-radius: 0.9em;
+  background: var(--teal);
+  font: 400 var(--timer-size) / 1.1 "PT Sans", sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0 0 0.5em var(--teal-glow);
+  white-space: nowrap;
+}
+.timer > svg {
+  position: absolute;
+  inset: 0 auto 0 0;
+  height: 100%;
+  width: auto;
+}
+.timer-label,
+.timer-time {
+  position: relative;
+  margin: 0;
+  font: inherit;
+}
+.timer-time {
+  line-height: 1;
+}
+.timer .value {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+.timer .unit {
+  font-family: "PT Sans Narrow", sans-serif;
+  margin: 0 0.3em 0 0.03em;
+}
+.timer .unit.word {
+  margin-left: 0.25em;
+}
+
+footer {
+  position: absolute;
+  bottom: max(var(--gutter), env(safe-area-inset-bottom));
+  left: max(var(--gutter), env(safe-area-inset-left));
+  max-width: 40vw;
+}
+#credit {
+  margin: 0;
+  font-size: clamp(0.8125rem, 1.1vmin, 1.125rem);
+  text-shadow: 0 1px 3px rgb(0 0 0 / 0.9);
+  opacity: 0.85;
+}
+#credit a {
+  color: inherit;
+  text-underline-offset: 0.15em;
+}
+#credit a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Portrait and square: splash over timer, centred, with the photo blurred behind for legibility. */
+@media (max-aspect-ratio: 1/1) {
+  :root {
+    --timer-size: clamp(16px, min(4.6vw, 2.6vh), 34px);
+    --splash-height: min(46vw, 28vh, 420px);
+  }
+  .backdrop {
+    filter: blur(14px) brightness(0.9);
+    transform: scale(1.1);
+  }
+  main {
+    grid-template-rows: 1fr auto auto 1.3fr;
+    justify-items: center;
+    row-gap: clamp(32px, 6vh, 96px);
+  }
+  .splash {
+    grid-row: 2;
+  }
+  .timer {
+    grid-row: 3;
+  }
+  footer {
+    left: 0;
+    right: 0;
+    max-width: none;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop img {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .timer {
+    border: 1px solid CanvasText;
+  }
+}
+
+.pixel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}

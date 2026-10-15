@@ -1,0 +1,32 @@
+{
+  "name": "what-season-is-it-in-horizon",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.11.2",
+  "engines": {
+    "node": ">=26"
+  },
+  "scripts": {
+    "build": "node scripts/build.ts",
+    "serve": "node scripts/serve.ts",
+    "dev": "pnpm build && pnpm serve",
+    "test": "vitest run",
+    "typecheck": "tsc",
+    "check": "pnpm typecheck && pnpm test && pnpm build",
+    "screenshots": "node scripts/screenshots.ts"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@types/node": "^26.6.5",
+    "esbuild": "^0.28.2",
+    "playwright": "^1.64.0",
+    "sharp": "^0.35.5",
+    "subset-font": "^2.9.0",
+    "svgo": "^4.1.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.4"
+  },
+  "dependencies": {
+    "thumbhash": "^0.1.1"
+  }
+}

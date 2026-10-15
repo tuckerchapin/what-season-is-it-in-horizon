@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="{{CSP}}">
+  <title>What season is it in Forza Horizon 4?</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+  <link rel="canonical" href="{{ORIGIN}}/">
+
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#00b592">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Horizon Season">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="{{ORIGIN}}/">
+  <meta property="og:title" content="What season is it in Forza Horizon 4?">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:image" content="{{ORIGIN}}/og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Winter, Spring, Summer and Autumn season banners from Forza Horizon 4 over community photos.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Horizon Season",
+    "alternateName": "What season is it in Horizon?",
+    "url": "{{ORIGIN}}/",
+    "description": "{{DESCRIPTION}}",
+    "author": { "@type": "Person", "name": "Tucker Chapin", "url": "https://tuckerchap.in/" }
+  }
+  </script>
+
+  {{FONT_PRELOADS}}
+  <style>{{CSS}}</style>
+  <script>{{JS}}</script>
+  <noscript><style>{{NOSCRIPT_CSS}}</style></noscript>
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true">
+    <picture><source type="image/avif"><img id="photo" alt="" decoding="async" fetchpriority="high"></picture>
+    <noscript>{{NOSCRIPT_PHOTO}}</noscript>
+  </div>
+
+  <main>
+    <h1 class="splash">
+      <span class="visually-hidden needs-js">It's <span id="season-name"></span> in Forza Horizon 4</span>
+      <noscript>What season is it in Forza Horizon 4?</noscript>
+      {{SPLASHES}}
+    </h1>
+
+    <section class="timer" aria-labelledby="timer-label">
+      {{CLOCK}}
+      <h2 id="timer-label" class="timer-label"><span id="next" class="needs-js"></span><span class="needs-js"> starts in</span><noscript>Seasons change every</noscript></h2>
+      <p class="timer-time">
+        <time id="time" class="needs-js"><span id="time-visual" aria-hidden="true"></span><span id="time-spoken" class="visually-hidden"></span></time>
+        <noscript>Thursday 14:30 UTC</noscript>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p id="credit"></p>
+    <p id="announce" class="visually-hidden" aria-live="polite"></p>
+  </footer>
+  <script>mountSeason()</script>
+  <noscript><img class="pixel" src="https://tuckerchapin.goatcounter.com/count?p={{ANALYTICS_PATH}}" alt="" width="1" height="1"></noscript>
+</body>
+</html>
