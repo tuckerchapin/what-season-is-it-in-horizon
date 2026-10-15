@@ -17,7 +17,7 @@ Photos are by Forza Horizon players on reddit. Each one is credited on the page.
 <!-- meta-preview https://whatseasonisitinhorizon.com/ -->
 > <a href="https://whatseasonisitinhorizon.com/"><img src="https://whatseasonisitinhorizon.com/icon.svg" width="16" height="16" alt=""></a> Horizon Season
 >
-> **[What season is it in Forza Horizon 4?](https://whatseasonisitinhorizon.com/)**
+> **[What Season Is It in Horizon](https://whatseasonisitinhorizon.com/)**
 >
 > Which season is it in Forza Horizon 4 right now? A live countdown to the next weekly season change, over community photos from the Horizon Festival.
 >
