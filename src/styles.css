@@ -37,6 +37,8 @@ body {
   position: absolute;
   width: 1px;
   height: 1px;
+  margin: -1px;
+  padding: 0;
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;
@@ -149,7 +151,7 @@ main {
 
 
 /*
- * Portrait and square: timer pinned to the bottom, splash centred on screen, both sharing one width.
+ * Portrait and square: splash and timer stacked one gutter apart, sharing one width, the pair centred on screen.
  * The timer is a fixed-proportion pill (13.8em × 4.4em: its widest label, "AUTUMN STARTS IN", is 13.78em)
  * whose font size follows its width, so when the screen is narrow everything inside scales down as one.
  */
@@ -165,13 +167,13 @@ main {
     --timer-em: 13.8;
     --timer-width: min(var(--timer-em) * var(--timer-size), 100vw - 2 * var(--gutter));
     --timer-height: calc(var(--timer-width) / var(--timer-em) * 4.4);
-    /* Equal outer rows centre the splash on screen; the bottom row never shrinks below the timer plus one
-       gutter, so on short screens the splash instead sits exactly one gutter above the timer. */
-    grid-template-rows: minmax(0, 1fr) auto minmax(calc(var(--timer-height) + var(--gutter)), 1fr);
+    /* Equal flexible rows centre the pair; they collapse to zero (never clip) when the screen is too short. */
+    grid-template-rows: minmax(0, 1fr) auto auto minmax(0, 1fr);
     justify-items: center;
   }
   .splash {
     grid-row: 2;
+    margin-bottom: var(--gutter);
   }
   .splash svg {
     width: var(--timer-width);
@@ -180,7 +182,6 @@ main {
   }
   .timer {
     grid-row: 3;
-    align-self: end;
     width: var(--timer-width);
     height: var(--timer-height);
     font-size: calc(var(--timer-width) / var(--timer-em));
