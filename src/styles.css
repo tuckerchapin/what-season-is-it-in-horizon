@@ -18,8 +18,9 @@
 }
 
 :root {
-  --teal: #00b592;
-  --teal-glow: #008168;
+  /* The in-game #00b592 darkened ×0.73 so white text passes WCAG AA (4.65:1). */
+  --teal: #00846b;
+  --teal-glow: #005e4c;
   --gutter: clamp(16px, 3vmin, 40px);
   --timer-size: clamp(15px, min(1.15vw, 2.1vh), 28px);
   --splash-height: clamp(100px, min(13vw, 26vh), 340px);

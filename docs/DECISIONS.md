@@ -49,3 +49,19 @@ Universal Analytics was removed; Google shut it down in July 2023.
 **Decision:** a `<meta>` CSP with `default-src 'none'`. The build computes sha256 hashes for every inline `<script>` and `<style>`. Framing is blocked by headers in `render.yaml`.
 
 **Why:** it's free to do on a page this small and rules out a whole class of injection bugs.
+
+## ADR-006: Darken the timer teal to pass WCAG AA (2026-10-15)
+
+**Decision:** the in-game palette is multiplied by 0.73 in sRGB, which keeps the hue and lowers the brightness. Tucker chose this.
+
+| Use | In-game | Now | Contrast with white |
+|---|---|---|---|
+| Pill | `#00b592` | `#00846b` | 4.65:1 |
+| Clock shadow | `#00a383` | `#007760` | 5.52:1 |
+| Text glow | `#008168` | `#005e4c` | 7.76:1 |
+
+The theme color and manifest use the new pill color. The favicon and app icons keep the original teal, because icons aren't text.
+
+**Rejected:**
+- **Keeping the original teal:** it's the authentic look, but only 2.62:1. Even large text needs 3:1.
+- **Making the text larger:** it wouldn't pass even under the large-text threshold.

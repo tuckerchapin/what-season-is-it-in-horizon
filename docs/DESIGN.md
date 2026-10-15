@@ -18,7 +18,7 @@ The 2026 rebuild addressed every item under "Fragile or broken parts" (see `CLAU
 - **Portrait (2026, from Tucker):** the timer is pinned to the bottom with the same gutter as landscape and centred horizontally. It is shrunk as a whole unit to fit narrow screens. The splash is exactly as wide as the timer and centred on screen. If centring would make it overlap the timer, it sits one gutter above the timer instead.
 
 ### Countdown pill (replicates the in-game timer)
-- Background `#00B592` (Horizon teal), border radius about 20px, white uppercase text with a `0 0 10px #008168` glow.
+- Background `#00B592` (Horizon teal; darkened to `#00846b` in 2026 for WCAG AA, see ADR-006), border radius about 20px, white uppercase text with a `0 0 10px #008168` glow.
 - **Clock icon with a long flat shadow:** the shadow (`#00A383`) runs at 45° from the clock face to the bottom-right edge of the pill (`clock-fullshadow.svg`, a 478×330 tile anchored left). The icon is a white ring, a darker inner face and an L-shaped hand.
 - Line 1 is `{NEXT} STARTS IN` in PT Sans Regular. Line 2 holds the values.
 - **Values:** each number is in PT Sans **Bold** and is larger than its unit. Each unit letter is in **PT Sans Narrow** and is kerned tight against its number (negative left margin), with a gap before the next pair. For example, `10H 15M`.
