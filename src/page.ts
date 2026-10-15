@@ -9,6 +9,8 @@ export interface Photo {
   ratio: number;
   /** Base64 ThumbHash, decoded into the placeholder shown before the photo loads. */
   hash: string;
+  /** Average colours of the top and bottom edges in portrait, for iOS Safari's bars. */
+  edges: [top: string, bottom: string];
 }
 
 declare const PHOTOS: Record<Season, Photo[]>;
@@ -45,6 +47,8 @@ function enterSeason(next: SeasonState) {
   photo = choices[Math.floor(Math.random() * choices.length)]!;
   root.dataset.season = state.season;
   root.style.setProperty("--placeholder", `url(${thumbHashToDataURL(fromBase64(photo.hash))})`);
+  root.style.setProperty("--edge-top", photo.edges[0]);
+  root.style.setProperty("--edge-bottom", photo.edges[1]);
   document.title = `It's ${state.season} in Horizon`;
 }
 

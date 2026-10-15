@@ -59,6 +59,30 @@ await buildOgImage(splashes);
 await buildPage(photos, fonts, splashes);
 await report();
 
+/**
+ * The average colour along the top and bottom of the photo as a phone in portrait shows it: the
+ * central band that `object-fit: cover` keeps, inset past the 1.1× zoom, darkened like the blur filter.
+ * iOS Safari tints its bars from these (see `.edge` in styles.css).
+ */
+function edgeColors(rgba: Buffer, width: number, height: number): [string, string] {
+  const band = Math.min(1, ((9 / 19.5) * height) / width);
+  const x0 = Math.round((width * (1 - band)) / 2);
+  const x1 = width - x0;
+  const rows = (y0: number, y1: number) => {
+    const sum = [0, 0, 0];
+    for (let y = y0; y < y1; y++) {
+      for (let x = x0; x < x1; x++) {
+        for (let c = 0; c < 3; c++) sum[c]! += rgba[(y * width + x) * 4 + c]!;
+      }
+    }
+    const n = (y1 - y0) * (x1 - x0);
+    return `#${sum.map((v) => Math.round((v / n) * 0.9).toString(16).padStart(2, "0")).join("")}`;
+  };
+  const inset = Math.round(height * 0.05);
+  const depth = Math.max(1, Math.round(height * 0.08));
+  return [rows(inset, inset + depth), rows(height - inset - depth, height - inset)];
+}
+
 async function buildPhotos(): Promise<Record<Season, Photo[]>> {
   const jobs: (() => Promise<void>)[] = [];
   const result = {} as Record<Season, Photo[]>;
@@ -85,6 +109,7 @@ async function buildPhotos(): Promise<Record<Season, Photo[]>> {
         widths,
         ratio: Math.round((width / height) * 1000) / 1000,
         hash: Buffer.from(rgbaToThumbHash(info.width, info.height, data)).toString("base64"),
+        edges: edgeColors(data, info.width, info.height),
       });
 
       for (const w of widths) {
