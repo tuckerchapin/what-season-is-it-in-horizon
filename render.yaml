@@ -39,3 +39,6 @@ services:
       - path: /fonts/*
         name: Cache-Control
         value: public, max-age=31536000, immutable
+      - path: /manifest.webmanifest
+        name: Content-Type
+        value: application/manifest+json
