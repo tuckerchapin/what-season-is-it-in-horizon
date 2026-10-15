@@ -15,6 +15,7 @@ The 2026 rebuild addressed every item under "Fragile or broken parts" (see `CLAU
 ### Layout
 - **Landscape:** the photo fills the viewport edge to edge. The countdown pill sits in the top-right corner and the season splash sits in the bottom-right, with about 30px of inset. Everything stays on the right so the car in the photo stays visible.
 - **Portrait:** the splash comes first and spans the width, then the pill is centred below it. The photo is blurred (10px backdrop blur) so the text stays readable over a cropped image. Getting this blur right took about 8 commits, so it was deliberate.
+- **Portrait (2026, from Tucker):** the timer is pinned to the bottom with the same gutter as landscape and centred horizontally. It is shrunk as a whole unit to fit narrow screens. The splash is exactly as wide as the timer and centred on screen. If centring would make it overlap the timer, it sits one gutter above the timer instead.
 
 ### Countdown pill (replicates the in-game timer)
 - Background `#00B592` (Horizon teal), border radius about 20px, white uppercase text with a `0 0 10px #008168` glow.

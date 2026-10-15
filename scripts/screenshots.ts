@@ -17,6 +17,9 @@ const VIEWPORTS = {
   "phone-390x844": { width: 390, height: 844, isMobile: true, deviceScaleFactor: 3 },
   "phone-landscape-844x390": { width: 844, height: 390, isMobile: true, deviceScaleFactor: 3 },
   "small-320x568": { width: 320, height: 568, isMobile: true, deviceScaleFactor: 2 },
+  "window-square-1280x1320": { width: 1280, height: 1320 },
+  "window-narrow-570x1320": { width: 570, height: 1320 },
+  "window-short-600x680": { width: 600, height: 680 },
 };
 
 await mkdir(OUT, { recursive: true });

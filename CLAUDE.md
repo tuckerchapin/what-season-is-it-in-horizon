@@ -32,6 +32,7 @@ A single static page: the current Forza Horizon 4 season, a countdown that match
 - svgo `prefixIds` also prefixes class names unless `prefixClassNames: false`, which breaks the `[data-season] .spring` switch.
 - Don't wait for `DOMContentLoaded` to fill the timer. Browsers paint streamed HTML before it fires. `mountSeason()` runs inline right after the markup instead.
 - Adding a glyph to the timer (a new label, for example) means updating the subset strings in `FONTS` in `build.ts`.
+- In portrait the timer is a fixed 13.8em × 4.4em pill, and its font size is derived from its width (`--timer-em` in `styles.css`). The widest label, "AUTUMN STARTS IN", measures 13.78em. If you change the labels, fonts or padding, re-measure it, or the text will overflow on narrow screens.
 
 ## Invariants
 

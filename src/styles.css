@@ -168,30 +168,45 @@ footer {
   border-radius: 2px;
 }
 
-/* Portrait and square: splash over timer, centred, with the photo blurred behind for legibility. */
+/*
+ * Portrait and square: timer pinned to the bottom, splash centred on screen, both sharing one width.
+ * The timer is a fixed-proportion pill (13.8em × 4.4em: its widest label, "AUTUMN STARTS IN", is 13.78em)
+ * whose font size follows its width, so when the screen is narrow everything inside scales down as one.
+ */
 @media (max-aspect-ratio: 1/1) {
   :root {
-    --timer-size: clamp(16px, min(4.6vw, 2.6vh), 34px);
-    --splash-height: min(46vw, 28vh, 420px);
+    --timer-size: clamp(16px, 2.8vh, 32px);
   }
   .backdrop {
     filter: blur(14px) brightness(0.9);
     transform: scale(1.1);
   }
   main {
-    grid-template-rows: 1fr auto auto 1.3fr;
+    --timer-em: 13.8;
+    --timer-width: min(var(--timer-em) * var(--timer-size), 100vw - 2 * var(--gutter));
+    --timer-height: calc(var(--timer-width) / var(--timer-em) * 4.4);
+    /* Equal outer rows centre the splash on screen; the bottom row never shrinks below the timer plus one
+       gutter, so on short screens the splash instead sits exactly one gutter above the timer. */
+    grid-template-rows: minmax(0, 1fr) auto minmax(calc(var(--timer-height) + var(--gutter)), 1fr);
     justify-items: center;
-    row-gap: clamp(32px, 6vh, 96px);
   }
   .splash {
     grid-row: 2;
   }
+  .splash svg {
+    width: var(--timer-width);
+    height: auto;
+    max-width: none;
+  }
   .timer {
     grid-row: 3;
+    align-self: end;
+    width: var(--timer-width);
+    height: var(--timer-height);
+    font-size: calc(var(--timer-width) / var(--timer-em));
   }
   footer {
-    left: 0;
-    right: 0;
+    inset: max(var(--gutter), env(safe-area-inset-top)) 0 auto;
     max-width: none;
     text-align: center;
   }
