@@ -201,7 +201,8 @@ main {
  * iOS Safari (26+) paints its status bar and toolbar itself, in the background colour of the fixed element at
  * the centre of each edge (theme-color is ignored), and never shows the photo behind them. These strips give
  * each bar the blurred photo's own edge colour and fade into it, so the bars read as part of the picture.
- * A strip must be deeper than 10px or Safari samples past it.
+ * Safari only looks at the topmost element at each edge, so the strips sit above the content (a strip behind
+ * it is ignored and the bars fall back to the page background), and they must be deeper than 10px.
  */
 .edge {
   display: none;
@@ -211,7 +212,7 @@ main {
     display: block;
     position: fixed;
     inset-inline: 0;
-    z-index: -1;
+    z-index: 1;
     height: 16px;
     background-color: var(--edge);
   }
