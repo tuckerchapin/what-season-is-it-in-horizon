@@ -22,6 +22,7 @@ A single static page: the current Forza Horizon 4 season, a countdown that match
 - FH4 seasons change **Thursdays 14:30 UTC**, cycling weekly winter → spring → summer → autumn. Winter began 2018-11-08. Sources: Microsoft via Stevivor, and Wikipedia (checked 2026-10-14).
 - GoatCounter doesn't record which domain a hit came from, so this site reports paths as `whatseasonisitinhorizon.com/` to keep them separate from tuckerchap.in's `/` under the shared `tuckerchapin` code. It only counts on the production hostname.
 - Render has pnpm preinstalled. Don't `corepack enable` there (read-only `/usr/bin`). Node 25+ also no longer bundles corepack.
+- pnpm 12 fails CI installs (`ERR_PNPM_IGNORED_BUILDS`) on any unapproved install script, where locally it only warns. Approvals live in `pnpm-workspace.yaml` (`allowBuilds`). Reproduce with `CI=true pnpm install --frozen-lockfile`.
 
 ## Pitfalls
 
