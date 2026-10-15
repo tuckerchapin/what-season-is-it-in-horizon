@@ -65,3 +65,13 @@ The theme color and manifest use the new pill color. The favicon and app icons k
 **Rejected:**
 - **Keeping the original teal:** it's the authentic look, but only 2.62:1. Even large text needs 3:1.
 - **Making the text larger:** it wouldn't pass even under the large-text threshold.
+
+## ADR-007: Render service created through the REST API, not a Blueprint (2026-10-15)
+
+**Decision:** `POST /v1/services`, with `type: static_site`, `serviceDetails.headers` and `buildFilter` copied from `render.yaml`, then `POST /custom-domains` and `/verify`. The service first deployed from the `modernize` branch while GitHub Pages kept serving `master`. After DNS propagated, `master` was fast-forwarded and the service switched to it with `PATCH {branch}`.
+
+**Why:** the service could be created and verified from the CLI's API key without a trip through the dashboard. The Render MCP's `create_static_site` can't set headers or domains.
+
+**Consequence:** `render.yaml` is documentation plus a ready-made Blueprint, but it isn't synced. Changes to it have to be applied to the service by hand.
+
+**Rejected:** creating a Blueprint in the dashboard. It would have pinned the service to the Blueprint's branch, and it needed a manual step.
