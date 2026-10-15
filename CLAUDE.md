@@ -13,6 +13,7 @@ A single static page: the current Forza Horizon 4 season, a countdown that match
 - **Render:** static site `whatseasonisitinhorizon` (`srv-db852p8n74is73dr1ug0`) in "il mio workspace". It auto-deploys on every push to `master`, in about a minute.
 - **`render.yaml` describes the service but is not a synced Blueprint.** The service was created through the REST API (ADR-007). If you edit headers, the build command or the build filter in `render.yaml`, also apply the change to the service (dashboard, or `POST /v1/services/<id>/headers`), and check it with `curl -sI`.
 - **DNS:** at Namecheap. `A @ → 216.24.57.1` and `CNAME www → whatseasonisitinhorizon.onrender.com`; there must be no AAAA records. Render redirects `www` and `http://` to the apex. GitHub Pages is off.
+- **The README's `## Meta Preview` section is generated** by `.github/workflows/readme-meta-preview.yml` ([tuckerchapin/readme-meta-preview](https://github.com/tuckerchapin/readme-meta-preview)), daily, from the live site. Don't edit between its markers. After deploying a change to the title, description, favicon or preview image, run `gh workflow run readme-meta-preview.yml`. The bot commits to the default branch, so `git pull` before pushing.
 
 ## Verifying changes
 

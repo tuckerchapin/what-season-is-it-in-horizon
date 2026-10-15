@@ -1,0 +1,11 @@
+name: README meta preview
+on:
+  schedule: [{ cron: "17 9 * * *" }]  # daily; reads the deployed site, so not on push
+  workflow_dispatch:
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: tuckerchapin/readme-meta-preview@v1
