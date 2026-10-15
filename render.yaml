@@ -2,7 +2,6 @@ services:
   - type: web
     runtime: static
     name: whatseasonisitinhorizon
-    branch: master
     # pnpm is preinstalled on Render; don't `corepack enable` (read-only /usr/bin).
     buildCommand: pnpm --version && pnpm install --frozen-lockfile && pnpm build
     staticPublishPath: ./dist
